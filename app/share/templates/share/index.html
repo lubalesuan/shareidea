@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+	{% include "share/partials/share/head.html" %}
+</head>
+<body>
+	{% include "share/partials/share/menu.html" %}
+	{% include "share/partials/share/sidebar.html" %}
+	{% if project_list %}
+	    <ul>
+	    {% for project in project_list %}
+	        <li>{{ project.project_name }}</li>
+	    {% endfor %}
+	    </ul>
+	{% else %}
+	    <p>No projects are posted.</p>
+	{% endif %}
+</body>
