@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<head>
-	{% include "share/partials/share/head.html" %}
-</head>
-<body>
+{% extends "share/base.html" %}
+
+{% block head %} 
+	<title>"Share Project Index Page" </title>
+{% endblock %}
+
+{% block menu %}
 	{% include "share/partials/share/menu.html" %}
+{% endblock %}
+
+{% block sidebar %}
 	{% include "share/partials/share/sidebar.html" %}
+{% endblock %}
+
+{% block content %}
 	{% if project_list %}
 	    <ul>
 	    {% for project in project_list %}
@@ -14,4 +22,4 @@
 	{% else %}
 	    <p>No projects are posted.</p>
 	{% endif %}
-</body>
+{% endblock %}
