@@ -16,7 +16,9 @@
 	{% if project_list %}
 	    <ul>
 	    {% for project in project_list %}
-	        <li>{{ project.project_name }}</li>
+	        <li>{{ project.project_name }}
+	        	<p>{{project.pitch}}</p>
+	        </li>
 	    {% endfor %}
 	    </ul>
 	{% else %}
