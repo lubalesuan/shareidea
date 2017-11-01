@@ -11,6 +11,7 @@ def index(request):
 	date = ''
 	category = ''
 	project_list = None
+	categories_list = Categories.objects.all();
 	if request.method == 'POST':
 		#create form instance, populate with data from 
 		form = SearchForm(request.POST)
@@ -27,6 +28,6 @@ def index(request):
 		form = SearchForm()	
 		project_list = Project.objects.all()
 	return render(request, 'share/index.html', 
-		{'form':form, 'project_list':project_list})
+		{'form':form, 'project_list':project_list, 'categories_list': categories_list})
 
 
