@@ -6,6 +6,11 @@ class CustomUser(models.Model):
 	def __str__(self):
 		return self.user.username
 
+class Categories(models.Model):
+	category_name = models.CharField(max_length = 20)
+	def __str__(self):
+		return self.category_name
+
 class Project(models.Model):
 	project_name = models.CharField(max_length = 20)
 	pitch = models.TextField(max_length = 250)
@@ -14,11 +19,6 @@ class Project(models.Model):
 	accept_applicants = models.BooleanField()
 	contact_email = models.EmailField()
 	collaborators = models.ManyToManyField(CustomUser)
+	project_categories = models.ManyToManyField(Categories)
 	def __str__(self):
 		return self.project_name
-
-class Categories(models.Model):
-	category_name = models.CharField(max_length = 20)
-	project_list = models.ManyToManyField(Project)
-	def __str__(self):
-		return self.category_name
