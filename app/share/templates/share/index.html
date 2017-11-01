@@ -13,6 +13,7 @@
 {% endblock %}
 
 {% block content %}
+	{% include "share/partials/share/searchform.html" %}
 	{% if project_list %}
 	    <ul>
 	    {% for project in project_list %}
