@@ -1,0 +1,28 @@
+{% extends "project/base.html" %}
+
+{% block head %} 
+	<title>"project Project Index Page" </title>
+{% endblock %}
+
+{% block menu %}
+	{% include "project/partials/project/menu.html" %}
+{% endblock %}
+
+{% block sidebar %}
+	{% include "project/partials/project/sidebar.html" %}
+{% endblock %}
+
+{% block content %}
+	{% include "project/partials/project/searchform.html" %}
+	{% if project_list %}
+	    <ul>
+	    {% for project in project_list %}
+	        <li>{{ project.project_name }}
+	        	<p>{{project.pitch}}</p>
+	        </li>
+	    {% endfor %}
+	    </ul>
+	{% else %}
+	    <p>No projects are posted.</p>
+	{% endif %}
+{% endblock %}
