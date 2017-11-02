@@ -1,19 +1,11 @@
-{% extends "project/base.html" %}
+{% extends "core/base.html" %}
 
 {% block head %} 
 	<title>"Project Index Page" </title>
 {% endblock %}
 
-{% block menu %}
-	{% include "project/partials/project/menu.html" %}
-{% endblock %}
-
-{% block sidebar %}
-	{% include "project/partials/project/sidebar.html" %}
-{% endblock %}
-
 {% block content %}
-	{% include "project/partials/project/searchform.html" %}
+	{% include "project/partials/searchform.html" %}
 	{% if project_list %}
 	    <ul>
 	    {% for project in project_list %}

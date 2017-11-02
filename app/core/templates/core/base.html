@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+	{% include "core/head.html" %}
+	{% block head %}{% endblock %}
+</head>
+<body>
+	<div id="body-container" class="container">
+
+		<div id="header-container" class="container-fluid">
+			{% block header %}{% endblock %}
+		</div> <!-- /header-container -->
+
+		<div id="menu-container" class="container-fluid">
+			{% include 'core/menu.html' %}
+			{% block menu %}{% endblock %}
+			
+		</div> <!-- /menu-container -->
+
+		<div id="content-row" class="row">
+			<div id="leftbar" class="col-sm-3">
+				{% include 'core/sidebar.html' %}
+				{% block sidebar %}{% endblock %}
+			</div> <!-- /leftbar -->
+
+			<div id="content" class="col-sm-9">
+				{% block content %}{% endblock %}
+			</div><!-- /content -->
+		</div> <!-- /content row -->
+
+		<div id="footer-container" class="container">
+			{% block footer %}{% endblock %}
+			{% block footer-scripts %}{% endblock %}
+		</div> <!-- /footer-container -->
+
+		
+	</div> <!-- /body container -->
+</body>

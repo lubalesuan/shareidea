@@ -1,13 +1,9 @@
-{% extends "project/base.html"%}
+{% extends "core/base.html"%}
 
 {% block head %} 
 	<title> Start My Project </title>
 {% endblock %}
 
-{% block menu %}
-	{% include "project/partials/project/menu.html" %}
-{% endblock %}
-
 {% block content %}
-	{% include "project/partials/project/create_project_form.html" %}
+	{% include "project/partials/create_project_form.html" %}
 {% endblock %}

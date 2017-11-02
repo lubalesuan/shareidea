@@ -44,7 +44,4 @@ def createProject(request):
 	return render(request, 'project/create_project.html', 
 		{'form':form})
 			
-			
-def about(request):
-	return render(request, 'project/about.html')
 
