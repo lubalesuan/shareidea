@@ -34,24 +34,9 @@ def createProject(request):
 	if request.method == 'POST':
 		form = CreateProjectForm(request.POST)
 		if form.is_valid():
-			# name = form.cleaned_data['name']
-			# pitch = form.cleaned_data['pitch']
-			# description = form.cleaned_data['description']
-			# publish_date = form.cleaned_data['publish_date']
-			# accept_applicants = form.cleaned_data['accept_applicants']
-			# contact_email = form.cleaned_data['contact_email']
-			# category = form.cleaned_data['category']
-			# p = Project(project_name = name,
-			# 	pitch = pitch, description = description,
-			# 	publish_date = publish_date, accept_applicants = accept_applicants,
-			# 	contact_email = contact_email, category = category)
-			# print("after valid")
-			# p.save()
-			p = Project(**form.cleaned_data)
-			p.save()
+			p = form.save()
 			searchForm = SearchForm()
 			project_list = Project.objects.all()
-			# return HttpResponse(name)
 			return render(request, 'project/index.html', 
 				{'form':searchForm, 'project_list':project_list})
 	else: 
@@ -60,5 +45,6 @@ def createProject(request):
 		{'form':form})
 			
 			
-
+def about(request):
+	return render(request, 'project/about.html')
 
