@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^login/$', auth_views.login, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': settings.LOGOUT_REDIRECT_URL }, name='logout'),
     url(r'^signup/$', views.signup, name='signup'),
+    url(r'^update/$', views.update, name='user_update'),
 ]
