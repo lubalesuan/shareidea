@@ -6,19 +6,21 @@
 
 {% block content %}
 	{% include "project/partials/searchform.html" %}
+	<br />
 	{% if project_list %}
-	    <ul style="list-style: none">
+	    <div class="container-fluid">
 	    {% for project in project_list %}
-	        <li style="border:solid lightblue 1px; border-top:none; margin-bottom: 3px;">
-	        	<h4 style="background-color: lightblue; padding: 1em; padding-bottom:.25em;">{{ project.project_name }}</h4>
-	        	<div style="padding:.5em;">
+	        <div class="gallery-box"  style=" height: 250px; with:250px; max-width: 250px; max-height: 250px;  display:inline-grid; margin-bottom: -35px;">
+	        	<div class="gallery-title" style="font-weight: bold; font-size: 20px; color: lightyellow; background-color: lightskyblue; text-shadow: 2px 2px 3px darkblue; padding: 1em; padding-bottom:.25em; height: 60px; max-height:60px;overflow:hidden;">{{ project.project_name }}</div>
+	        	
+	        	<div class="gallery-text" style="border:solid skyblue 1px;  margin-top: -40px; margin-bottom: 3px; padding:.5em; height:150px; width: 240px; max-width: 240px;  overflow:scroll; background-image:url('/static/project/texture-1.JPG');">
 		        	<p>Published: {{ project.publish_date }}</p>
 		        	<p>Category: {{ project.category }} </p>
 		        	<p>{{project.pitch}}</p> 
 		        </div>
-	        </li>
+	        </div>
 	    {% endfor %}
-	    </ul>
+	    </div>
 	{% else %}
 	    <p>No projects are posted.</p>
 	{% endif %}
