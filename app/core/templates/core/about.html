@@ -1,16 +1,34 @@
 {% extends "core/base.html" %}
 
+{% block head %}
+<style>
+	.about-box {
+		
+	}
+
+	.about-box .title {
+		color: white;
+		background-color: deepskyblue;
+		text-align: center;
+		font-size: 3rem;
+		font-weight: bold;
+	}
+
+	.about-box .text {
+		text-align: center;
+		mnargin:auto;
+	}
+</style>
+{% endblock %}
+
 {% block content %}
-
-<div class="row">
-	<div class="col-sm-2">
-		<img src="" alt="about image" />
+<div class="about-box container">
+	<div class='title'>
+		About ShareIdea
 	</div>
-	<div class="col-sm-8">
-		<h1>About ShareIdea</h1>
+	<div class="text ">
 		<p>This is my ShareIdea Project</p>
-		<p><small>&copy;{% now "Y" %} Luba</small></p>
+		<p><small>&copy;{% now "Y" %} Luba</small></p>		
 	</div>
-</div> <!-- /row -->
-
+</div> <!-- /about-box -->
 {% endblock %}
