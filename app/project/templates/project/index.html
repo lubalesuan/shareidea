@@ -1,16 +1,21 @@
 {% extends "core/base.html" %}
 
 {% block head %} 
-	<title>"Project Index Page" </title>
+	<title>Project Index Page</title>
 {% endblock %}
 
 {% block content %}
 	{% include "project/partials/searchform.html" %}
 	{% if project_list %}
-	    <ul>
+	    <ul style="list-style: none">
 	    {% for project in project_list %}
-	        <li>{{ project.project_name }}
-	        	<p>{{project.pitch}}</p>
+	        <li style="border:solid lightblue 1px; border-top:none; margin-bottom: 3px;">
+	        	<h4 style="background-color: lightblue; padding: 1em; padding-bottom:.25em;">{{ project.project_name }}</h4>
+	        	<div style="padding:.5em;">
+		        	<p>Published: {{ project.publish_date }}</p>
+		        	<p>Category: {{ project.category }} </p>
+		        	<p>{{project.pitch}}</p> 
+		        </div>
 	        </li>
 	    {% endfor %}
 	    </ul>
