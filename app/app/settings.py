@@ -124,3 +124,5 @@ HOME_REDIRECT_URL = 'project_list'
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+AUTH_PROFILE_MODULE = 'user.Profile'

@@ -1,5 +1,6 @@
 from django.db import models
-from user.models import CustomUser
+# from user.models import CustomUser
+from django.contrib.auth.models import User
 
 class Category(models.Model):
 	category_name = models.CharField(max_length = 20)
@@ -14,6 +15,7 @@ class Project(models.Model):
 	accept_applicants = models.BooleanField()
 	contact_email = models.EmailField()
 	category = models.ForeignKey(Category)
-	collaborators = models.ManyToManyField(CustomUser)
+	collaborators = models.ManyToManyField(User)
+	
 	def __str__(self):
 		return self.project_name

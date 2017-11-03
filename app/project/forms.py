@@ -1,7 +1,7 @@
 from django import forms
 from django.forms import ModelForm
 from .models import Category, Project
-from user.models import CustomUser
+# from user.models import CustomUser
 
 class SearchForm(forms.Form):
     input_name = forms.CharField(label='Project Name', max_length=20, required = False)
