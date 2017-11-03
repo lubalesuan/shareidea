@@ -14,8 +14,8 @@ def signup(request):
         if form.is_valid():
             user = form.save()
             user.refresh_from_db()  # load the profile instance created by the signal
-            user.profile.projects_wanted = form.cleaned_data.get('projects_wanted')
-            user.profile.email_confirmed = form.cleaned_data.get('email_confirmed')
+            user.profile.projects_wanted = form.cleaned_data.get('projects_wanted') > 0
+            user.profile.email_confirmed = False
             user.save()
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=user.username, password=raw_password)
