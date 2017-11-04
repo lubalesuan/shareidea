@@ -1,6 +1,6 @@
 <div class="search-box">
 	<div class="title" >Search Projects</div>
-	<form action="/" method="post">
+	<form action="{% url 'project_list' %}" method="post">
 	    {% csrf_token %}
 		{{ form.as_p }}
 	    <input type="submit" value="Search" />

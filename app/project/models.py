@@ -1,12 +1,13 @@
 from django.db import models
 # from user.models import CustomUser
 from django.contrib.auth.models import User
+import datetime
 
 class Category(models.Model):
 	category_name = models.CharField(max_length = 20)
+	color = models.CharField(max_length = 7, blank=True, default='')
 
 	class Meta:
-		verbose_name = 'Category'
 		verbose_name_plural = 'Categories'
 
 	def __str__(self):
@@ -14,13 +15,14 @@ class Category(models.Model):
 
 class Project(models.Model):
 	project_name = models.CharField(max_length = 20)
-	pitch = models.TextField(max_length = 250)
-	description = models.TextField()
-	publish_date = models.DateTimeField('published date')
-	accept_applicants = models.BooleanField()
+	pitch = models.TextField(max_length = 250, blank=True)
+	description = models.TextField(blank=True)
+	publish_date = models.DateTimeField('published date', default=datetime.date.today().strftime("%m/%d/%y"))
+	accept_applicants = models.BooleanField(default=False)
 	contact_email = models.EmailField()
-	category = models.ForeignKey(Category)
-	collaborators = models.ManyToManyField(User)
+	category = models.ForeignKey(Category, null=True)
+	collaborators = models.ManyToManyField(User, null=True)
 	
 	def __str__(self):
 		return self.project_name
+ 
