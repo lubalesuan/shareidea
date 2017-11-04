@@ -17,7 +17,7 @@ class Project(models.Model):
 	project_name = models.CharField(max_length = 20)
 	pitch = models.TextField(max_length = 250, blank=True)
 	description = models.TextField(blank=True)
-	publish_date = models.DateTimeField('published date', default=datetime.date.today().strftime("%m/%d/%y"))
+	publish_date = models.DateField('published date', default=datetime.date.today().strftime("%m/%d/%y"))
 	accept_applicants = models.BooleanField(default=False)
 	contact_email = models.EmailField()
 	category = models.ForeignKey(Category, null=True)

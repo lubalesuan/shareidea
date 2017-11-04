@@ -29,10 +29,11 @@ def index(request):
 			results = results.filter(publish_date__lte = max_date)
 			print('max_date: ',results)
 
-		category = request.POST.get('input_category', None)
+		category = request.POST.getlist('input_category', None)
 		if category:
 			results = results.filter(category__in = category)
-			print('category: ',results)
+			print('cat:',category)
+			print('category: ',request.POST['input_category'])
 
 		return render(request,'project/index.html', {'form':  SearchForm(request.POST), 'project_list': results})
 
