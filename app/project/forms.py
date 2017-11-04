@@ -12,7 +12,6 @@ class SearchForm(forms.Form):
     input_category = forms.ModelMultipleChoiceField(label='Category', queryset = Category.objects.all().order_by(
     	'category_name'), required=False)
 
-
 class CreateProjectForm(ModelForm):
  	class Meta:
  		model = Project
