@@ -21,7 +21,7 @@ class Project(models.Model):
 	accept_applicants = models.BooleanField(default=False)
 	contact_email = models.EmailField()
 	category = models.ForeignKey(Category, null=True)
-	collaborators = models.ManyToManyField(User, null=True)
+	collaborators = models.ManyToManyField(User)
 	
 	def __str__(self):
 		return self.project_name

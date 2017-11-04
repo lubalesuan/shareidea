@@ -13,7 +13,7 @@
 	    <div class="container-fluid">
 	    {% for project in project_list %}
 	        <div class="gallery-box">
-	        	<div class="title">{{ project.project_name }}</div>
+	        	<div class="title" style-"background-color: {{ project.category.color }};">{{ project.project_name }}</div>
 	        	<div class="text">
 		        	<p>Published: {{ project.publish_date }}</p>
 		        	<p>Category: {{ project.category }} </p>

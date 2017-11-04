@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'project.apps.ProjectConfig',
     'user',
     'core',
+# 'suit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
