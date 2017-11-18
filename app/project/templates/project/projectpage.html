@@ -2,27 +2,29 @@
 {% load static %}
 
 {% block head %} 
-	<title>Project Index Page</title>
-	<link rel = "stylesheet" href = "{% static 'project/style.css' %}"/>
+	<title>Project Page</title>
 {% endblock %}
 
+{% block header %}
+	
+	<div class = "container-fluid">
+		
+	</div>
+	
+{% endblock %}
 {% block content %}
 	{% include "project/partials/searchform.html" %}
 	<br />
-	{% if project_list %}
+	{% if project %}
 	    <div class="container-fluid">
-	    {% for project in project_list %}
 	        <div class="gallery-box">
-	        	<div class="title" style="background: {{ project.category.color }};" >
-	        		<a href = "{% url 'project_page' project.id %}"> {{ project.project_name }} </a>
-	        	</div>
+	        	<div class="title" style="background: {{ project.category.color }};" >{{ project.project_name }}</div>
 	        	<div class="text">
 		        	<p>Published: {{ project.publish_date }}</p>
 		        	<p>Category: {{ project.category }} </p>
 		        	<p>{{project.pitch}}</p> 
 		        </div>
 	        </div>
-	    {% endfor %}
 	    </div>
 	{% else %}
 	    <p>No projects are posted.</p>

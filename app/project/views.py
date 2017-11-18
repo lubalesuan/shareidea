@@ -39,6 +39,13 @@ def index(request):
 
 	return render(request,'project/index.html', {'form': SearchForm(),'project_list': results})
 	
+def projectPage(request, pk = 0):
+	pk = int(pk)
+	# create = pk == 0
+	# if not create:
+	project = Project.objects.get(pk = pk)
+	# else:
+	return render(request, 'project/projectpage.html', {'project': project} )
 
 def createProject(request):
 	if request.method == 'POST':
@@ -50,3 +57,4 @@ def createProject(request):
 
 	return render(request,'project/create_project.html',{'form': CreateProjectForm()})
 
+	

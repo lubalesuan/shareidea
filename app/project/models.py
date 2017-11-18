@@ -15,7 +15,7 @@ class Category(models.Model):
 
 class Project(models.Model):
 	project_name = models.CharField(max_length = 20)
-	pitch = models.TextField(max_length = 250, blank=True)
+	pitch = models.CharField(max_length = 200, blank=True)
 	description = models.TextField(blank=True)
 	publish_date = models.DateField('published date', default=datetime.date.today().strftime("%m/%d/%y"))
 	accept_applicants = models.BooleanField(default=False)
