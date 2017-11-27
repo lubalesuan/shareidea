@@ -1,1 +1,14 @@
 Project pages, better user creation, email verification, change password, better search, more project views, collaborator invites, de-laming admin screens,
+
+
+views index change post. create search function that does filtering for you
+request.q
+
+views.search({project_name: blabal, t})
+
+
+search(){
+	
+}
+change collaborators in forms
+email confirmation
